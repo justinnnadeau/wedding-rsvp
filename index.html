@@ -1,453 +1,608 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Katie & Justin - Wedding RSVP</title>
-<style>
-* {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
-}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Katie & Justin - Wedding RSVP</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-```
-body {
-font-family: 'Georgia', serif;
-background: #0a0a0a;
-min-height: 100vh;
-padding: 20px;
-}
+        body {
+            font-family: 'Georgia', serif;
+            background: #0a0a0a;
+            min-height: 100vh;
+            padding: 20px;
+        }
 
-.container {
-max-width: 600px;
-margin: 0 auto;
-background: #1a1a1a;
-border-radius: 20px;
-box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-overflow: hidden;
-border: 1px solid #2a2a2a;
-}
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #1a1a1a;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+            border: 1px solid #2a2a2a;
+        }
 
-.header {
-background: #000;
-padding: 0;
-text-align: center;
-position: relative;
-}
+        .header {
+            background: #000;
+            padding: 0;
+            text-align: center;
+            position: relative;
+        }
 
-.engagement-photo {
-width: 100%;
-height: 500px;
-object-fit: cover;
-display: block;
-}
+        .engagement-photo {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            display: block;
+        }
 
-.header-text {
-padding: 40px 40px 50px;
-background: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, #1a1a1a 100%);
-margin-top: -60px;
-position: relative;
-}
+        .header-text {
+            padding: 40px 40px 50px;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, #1a1a1a 100%);
+            margin-top: -60px;
+            position: relative;
+        }
 
-.header::before {
-content: '♥';
-position: absolute;
-top: 20px;
-left: 50%;
-transform: translateX(-50%);
-font-size: 30px;
-color: rgba(255, 255, 255, 0.3);
-z-index: 10;
-}
+        .header::before {
+            content: '♥';
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 30px;
+            color: rgba(255, 255, 255, 0.3);
+            z-index: 10;
+        }
 
-.couple-names {
-font-size: 48px;
-color: #fff;
-margin-bottom: 15px;
-font-weight: 300;
-letter-spacing: 3px;
-}
+        .couple-names {
+            font-size: 48px;
+            color: #fff;
+            margin-bottom: 15px;
+            font-weight: 300;
+            letter-spacing: 3px;
+        }
 
-.wedding-date {
-font-size: 18px;
-color: #999;
-font-style: italic;
-letter-spacing: 1px;
-}
+        .wedding-date {
+            font-size: 18px;
+            color: #999;
+            font-style: italic;
+            letter-spacing: 1px;
+        }
 
-.content {
-padding: 50px 40px;
-}
+        .content {
+            padding: 50px 40px;
+        }
 
-.intro-text {
-text-align: center;
-font-size: 18px;
-color: #999;
-margin-bottom: 40px;
-line-height: 1.6;
-}
+        .intro-text {
+            text-align: center;
+            font-size: 18px;
+            color: #999;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
 
-.form-group {
-margin-bottom: 30px;
-}
+        .form-group {
+            margin-bottom: 30px;
+            position: relative;
+        }
 
-label {
-display: block;
-font-size: 16px;
-color: #ccc;
-margin-bottom: 10px;
-font-weight: 500;
-}
+        label {
+            display: block;
+            font-size: 16px;
+            color: #ccc;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
 
-input[type="text"],
-input[type="email"],
-input[type="number"],
-select,
-textarea {
-width: 100%;
-padding: 14px 18px;
-border: 2px solid #333;
-border-radius: 10px;
-font-size: 16px;
-font-family: 'Georgia', serif;
-transition: all 0.3s ease;
-background: #0a0a0a;
-color: #fff;
-}
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 14px 18px;
+            border: 2px solid #333;
+            border-radius: 10px;
+            font-size: 16px;
+            font-family: 'Georgia', serif;
+            transition: all 0.3s ease;
+            background: #0a0a0a;
+            color: #fff;
+        }
 
-input:focus,
-select:focus,
-textarea:focus {
-outline: none;
-border-color: #666;
-background: #000;
-}
+        input:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #666;
+            background: #000;
+        }
 
-textarea {
-resize: vertical;
-min-height: 100px;
-}
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
 
-input::placeholder,
-textarea::placeholder {
-color: #555;
-}
+        input::placeholder,
+        textarea::placeholder {
+            color: #555;
+        }
 
-.radio-group {
-display: flex;
-gap: 30px;
-margin-top: 12px;
-}
+        .radio-group {
+            display: flex;
+            gap: 30px;
+            margin-top: 12px;
+        }
 
-.radio-option {
-display: flex;
-align-items: center;
-cursor: pointer;
-}
+        .radio-option {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
 
-.radio-option input[type="radio"] {
-width: 20px;
-height: 20px;
-margin-right: 10px;
-cursor: pointer;
-accent-color: #666;
-}
+        .radio-option input[type="radio"] {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            cursor: pointer;
+            accent-color: #666;
+        }
 
-.radio-option label {
-margin: 0;
-cursor: pointer;
-font-weight: 400;
-color: #ccc;
-}
+        .radio-option label {
+            margin: 0;
+            cursor: pointer;
+            font-weight: 400;
+            color: #ccc;
+        }
 
-.meal-options {
-display: grid;
-gap: 12px;
-margin-top: 12px;
-}
+        .meal-options {
+            display: grid;
+            gap: 12px;
+            margin-top: 12px;
+        }
 
-.meal-option {
-display: flex;
-align-items: center;
-padding: 12px;
-border: 2px solid #333;
-border-radius: 10px;
-cursor: pointer;
-transition: all 0.3s ease;
-background: #0a0a0a;
-}
+        .meal-option {
+            display: flex;
+            align-items: center;
+            padding: 12px;
+            border: 2px solid #333;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: #0a0a0a;
+        }
 
-.meal-option:hover {
-border-color: #666;
-background: #000;
-}
+        .meal-option:hover {
+            border-color: #666;
+            background: #000;
+        }
 
-.meal-option input[type="radio"] {
-width: 18px;
-height: 18px;
-margin-right: 12px;
-cursor: pointer;
-accent-color: #666;
-}
+        .meal-option input[type="radio"] {
+            width: 18px;
+            height: 18px;
+            margin-right: 12px;
+            cursor: pointer;
+            accent-color: #666;
+        }
 
-.meal-option label {
-margin: 0;
-cursor: pointer;
-font-weight: 400;
-flex: 1;
-color: #ccc;
-}
+        .meal-option label {
+            margin: 0;
+            cursor: pointer;
+            font-weight: 400;
+            flex: 1;
+            color: #ccc;
+        }
 
-.submit-btn {
-width: 100%;
-padding: 18px;
-background: #fff;
-color: #000;
-border: none;
-border-radius: 12px;
-font-size: 18px;
-font-family: 'Georgia', serif;
-cursor: pointer;
-transition: all 0.3s ease;
-letter-spacing: 1px;
-margin-top: 20px;
-box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
-font-weight: 500;
-}
+        .submit-btn, .lookup-btn {
+            width: 100%;
+            padding: 18px;
+            background: #fff;
+            color: #000;
+            border: none;
+            border-radius: 12px;
+            font-size: 18px;
+            font-family: 'Georgia', serif;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            letter-spacing: 1px;
+            margin-top: 20px;
+            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+            font-weight: 500;
+        }
 
-.submit-btn:hover {
-transform: translateY(-2px);
-box-shadow: 0 6px 20px rgba(255, 255, 255, 0.2);
-background: #f0f0f0;
-}
+        .lookup-btn {
+            background: #333;
+            color: #fff;
+            margin-top: 10px;
+        }
 
-.submit-btn:active {
-transform: translateY(0);
-}
+        .submit-btn:hover, .lookup-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 255, 255, 0.2);
+        }
 
-.hidden {
-display: none;
-}
+        .lookup-btn:hover {
+            background: #444;
+        }
 
-.success-message {
-text-align: center;
-padding: 60px 40px;
-}
+        .submit-btn:active, .lookup-btn:active {
+            transform: translateY(0);
+        }
 
-.success-icon {
-font-size: 60px;
-margin-bottom: 20px;
-color: #fff;
-}
+        .submit-btn:disabled, .lookup-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
 
-.success-message h2 {
-color: #fff;
-font-size: 32px;
-margin-bottom: 15px;
-font-weight: 400;
-}
+        .hidden {
+            display: none;
+        }
 
-.success-message p {
-color: #999;
-font-size: 18px;
-line-height: 1.6;
-}
+        .success-message {
+            text-align: center;
+            padding: 60px 40px;
+        }
 
-.guest-count-group {
-margin-top: 12px;
-}
+        .success-icon {
+            font-size: 60px;
+            margin-bottom: 20px;
+            color: #fff;
+        }
 
-@media (max-width: 600px) {
-.couple-names {
-font-size: 36px;
-}
+        .success-message h2 {
+            color: #fff;
+            font-size: 32px;
+            margin-bottom: 15px;
+            font-weight: 400;
+        }
 
-.content {
-padding: 40px 25px;
-}
+        .success-message p {
+            color: #999;
+            font-size: 18px;
+            line-height: 1.6;
+        }
 
-.radio-group {
-flex-direction: column;
-gap: 15px;
-}
-}
-</style>
-```
+        .guest-card {
+            background: #0a0a0a;
+            border: 2px solid #333;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
 
+        .guest-card h3 {
+            color: #fff;
+            font-size: 20px;
+            margin-bottom: 15px;
+            font-weight: 400;
+        }
+
+        .error-message {
+            color: #ff6b6b;
+            font-size: 14px;
+            margin-top: 8px;
+        }
+
+        .loading {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border: 2px solid #333;
+            border-top-color: #666;
+            border-radius: 50%;
+            animation: spin 0.6s linear infinite;
+            margin-left: 10px;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        #guestParty {
+            margin-top: 20px;
+        }
+
+        .step-indicator {
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
+
+        @media (max-width: 600px) {
+            .couple-names {
+                font-size: 36px;
+            }
+
+            .content {
+                padding: 40px 25px;
+            }
+
+            .radio-group {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
 </head>
 <body>
-<div class="container">
-<div class="header">
-<img src="images/engagement.png"
-alt="Katie and Justin Engagement Photo"
-class="engagement-photo">
-<div class="header-text">
-<div class="couple-names">Katie & Justin</div>
-<div class="wedding-date">August 30, 2026</div>
-</div>
-</div>
+    <div class="container">
+        <div class="header">
+            <img src="images/engagement.png"
+                 alt="Katie and Justin Engagement Photo" 
+                 class="engagement-photo">
+            <div class="header-text">
+                <div class="couple-names">Katie & Justin</div>
+                <div class="wedding-date">August 30, 2026</div>
+            </div>
+        </div>
 
-```
-<div class="content">
-<div id="rsvpForm">
-<p class="intro-text">
-We would be honored to have you celebrate with us on our special day.
-Please let us know if you'll be able to join us.
-</p>
+        <div class="content">
+            <div id="lookupSection">
+                <p class="intro-text">
+                    We would be honored to have you celebrate with us on our special day. 
+                    Please enter your name to begin your RSVP.
+                </p>
+                <div class="step-indicator">Step 1 of 2: Find Your Invitation</div>
 
-<form id="form">
-<div class="form-group">
-<label for="name">Your Name *</label>
-<input type="text" id="name" name="name" required>
-</div>
+                <div class="form-group">
+                    <label for="guestName">Your Name *</label>
+                    <input type="text" id="guestName" placeholder="Enter your full name as it appears on the invitation">
+                    <div id="lookupError" class="error-message hidden"></div>
+                </div>
 
-<div class="form-group">
-<label for="email">Email Address *</label>
-<input type="email" id="email" name="email" required>
-</div>
+                <button type="button" class="lookup-btn" id="lookupBtn">
+                    Find My Invitation
+                </button>
+            </div>
 
-<div class="form-group">
-<label>Will you be attending? *</label>
-<div class="radio-group">
-<div class="radio-option">
-<input type="radio" id="attending-yes" name="attending" value="yes" required>
-<label for="attending-yes">Joyfully accepts</label>
-</div>
-<div class="radio-option">
-<input type="radio" id="attending-no" name="attending" value="no" required>
-<label for="attending-no">Regretfully declines</label>
-</div>
-</div>
-</div>
+            <div id="rsvpForm" class="hidden">
+                <div class="step-indicator">Step 2 of 2: Complete Your RSVP</div>
+                
+                <form id="form">
+                    <div id="guestParty"></div>
 
-<div id="attendingDetails" class="hidden">
-<div class="form-group">
-<label for="guestCount">Number of Guests Attending *</label>
-<input type="number" id="guestCount" name="guestCount" min="1" max="10" value="1">
-</div>
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
 
-<div class="form-group">
-<label>Meal Preference *</label>
-<div class="meal-options">
-<div class="meal-option">
-<input type="radio" id="meal-chicken" name="meal" value="chicken" required>
-<label for="meal-chicken">Herb-Roasted Chicken</label>
-</div>
-<div class="meal-option">
-<input type="radio" id="meal-fish" name="meal" value="fish" required>
-<label for="meal-fish">Pan-Seared Salmon</label>
-</div>
-<div class="meal-option">
-<input type="radio" id="meal-vegetarian" name="meal" value="vegetarian" required>
-<label for="meal-vegetarian">Vegetarian Risotto</label>
-</div>
-</div>
-</div>
+                    <div class="form-group">
+                        <label>Will you be attending? *</label>
+                        <div class="radio-group">
+                            <div class="radio-option">
+                                <input type="radio" id="attending-yes" name="attending" value="yes" required>
+                                <label for="attending-yes">Joyfully accepts</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="attending-no" name="attending" value="no" required>
+                                <label for="attending-no">Regretfully declines</label>
+                            </div>
+                        </div>
+                    </div>
 
-<div class="form-group">
-<label for="dietary">Dietary Restrictions or Allergies</label>
-<textarea id="dietary" name="dietary" placeholder="Please let us know of any dietary restrictions or food allergies..."></textarea>
-</div>
-</div>
+                    <div id="attendingDetails" class="hidden">
+                        <div id="mealSelections"></div>
 
-<div class="form-group">
-<label for="accommodation">Where will you be staying?</label>
-<input type="text" id="accommodation" name="accommodation" placeholder="Hotel name or location">
-</div>
+                        <div class="form-group">
+                            <label for="dietary">Dietary Restrictions or Allergies</label>
+                            <textarea id="dietary" name="dietary" placeholder="Please let us know of any dietary restrictions or food allergies for your party..."></textarea>
+                        </div>
+                    </div>
 
-<div class="form-group">
-<label for="songRequest">Do you have a song request for the band?</label>
-<input type="text" id="songRequest" name="songRequest" placeholder="Song title and artist">
-</div>
+                    <div class="form-group">
+                        <label for="accommodation">Where will you be staying?</label>
+                        <input type="text" id="accommodation" name="accommodation" placeholder="Hotel name or location">
+                    </div>
 
-<button type="submit" class="submit-btn">Send RSVP</button>
-</form>
-</div>
+                    <div class="form-group">
+                        <label for="songRequest">Do you have a song request for the band?</label>
+                        <input type="text" id="songRequest" name="songRequest" placeholder="Song title and artist">
+                    </div>
 
-<div id="successMessage" class="success-message hidden">
-<div class="success-icon">✓</div>
-<h2>Thank You!</h2>
-<p>Your RSVP has been received. We're so excited to celebrate with you!</p>
-</div>
-</div>
-</div>
+                    <button type="submit" class="submit-btn">Send RSVP</button>
+                </form>
+            </div>
 
-<script>
-const form = document.getElementById('form');
-const attendingRadios = document.querySelectorAll('input[name="attending"]');
-const attendingDetails = document.getElementById('attendingDetails');
-const rsvpForm = document.getElementById('rsvpForm');
-const successMessage = document.getElementById('successMessage');
+            <div id="successMessage" class="success-message hidden">
+                <div class="success-icon">✓</div>
+                <h2>Thank You!</h2>
+                <p>Your RSVP has been received. We're so excited to celebrate with you!</p>
+            </div>
+        </div>
+    </div>
 
-// Show/hide additional fields based on attendance
-attendingRadios.forEach(radio => {
-radio.addEventListener('change', function() {
-if (this.value === 'yes') {
-attendingDetails.classList.remove('hidden');
-document.getElementById('guestCount').required = true;
-document.querySelectorAll('input[name="meal"]').forEach(input => {
-input.required = true;
-});
-} else {
-attendingDetails.classList.add('hidden');
-document.getElementById('guestCount').required = false;
-document.querySelectorAll('input[name="meal"]').forEach(input => {
-input.required = false;
-});
-}
-});
-});
+    <script>
+        const lookupSection = document.getElementById('lookupSection');
+        const rsvpForm = document.getElementById('rsvpForm');
+        const successMessage = document.getElementById('successMessage');
+        const lookupBtn = document.getElementById('lookupBtn');
+        const guestNameInput = document.getElementById('guestName');
+        const lookupError = document.getElementById('lookupError');
+        const form = document.getElementById('form');
+        const attendingRadios = document.querySelectorAll('input[name="attending"]');
+        const attendingDetails = document.getElementById('attendingDetails');
+        
+        let guestParty = [];
+        
+        // IMPORTANT: Replace with your Google Apps Script URL
+        const scriptURL = 'YOUR_SCRIPT_URL_HERE';
 
-// Handle form submission
-form.addEventListener('submit', function(e) {
-e.preventDefault();
+        // Guest lookup
+        lookupBtn.addEventListener('click', async function() {
+            const guestName = guestNameInput.value.trim();
+            
+            if (!guestName) {
+                lookupError.textContent = 'Please enter your name';
+                lookupError.classList.remove('hidden');
+                return;
+            }
 
-// Disable submit button to prevent double submissions
-const submitBtn = form.querySelector('.submit-btn');
-const originalText = submitBtn.textContent;
-submitBtn.disabled = true;
-submitBtn.textContent = 'Submitting...';
+            lookupBtn.disabled = true;
+            lookupBtn.innerHTML = 'Looking up... <span class="loading"></span>';
+            lookupError.classList.add('hidden');
 
-// Collect form data
-const formData = {
-name: document.getElementById('name').value,
-email: document.getElementById('email').value,
-attending: document.querySelector('input[name="attending"]:checked').value,
-guestCount: document.getElementById('guestCount').value,
-meal: document.querySelector('input[name="meal"]:checked')?.value || 'N/A',
-dietary: document.getElementById('dietary').value,
-accommodation: document.getElementById('accommodation').value,
-songRequest: document.getElementById('songRequest').value
-};
+            try {
+                const response = await fetch(scriptURL, {
+                    method: 'POST',
+                    mode: 'cors',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        action: 'lookup',
+                        name: guestName
+                    })
+                });
 
-// IMPORTANT: Replace 'YOUR_SCRIPT_URL_HERE' with your actual Google Apps Script web app URL
-const scriptURL = 'https://script.google.com/macros/s/AKfycbymW_frA603VpS79IYdzSQiJ1pTnTRaH2qdOGG5bSbD8JKnHj4hvmE-zgH0JXmrUw38pA/exec';
+                const data = await response.json();
 
-// Send data to Google Sheets
-fetch(scriptURL, {
-method: 'POST',
-mode: 'no-cors',
-headers: {
-'Content-Type': 'application/json',
-},
-body: JSON.stringify(formData)
-})
-.then(response => {
-// Show success message
-rsvpForm.classList.add('hidden');
-successMessage.classList.remove('hidden');
-})
-.catch(error => {
-console.error('Error:', error);
-alert('There was an error submitting your RSVP. Please try again or contact us directly.');
-submitBtn.disabled = false;
-submitBtn.textContent = originalText;
-});
-});
-</script>
-```
+                if (data.success) {
+                    guestParty = data.guests;
+                    displayGuestParty();
+                    lookupSection.classList.add('hidden');
+                    rsvpForm.classList.remove('hidden');
+                } else {
+                    lookupError.textContent = data.message;
+                    lookupError.classList.remove('hidden');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                lookupError.textContent = 'An error occurred. Please try again.';
+                lookupError.classList.remove('hidden');
+            } finally {
+                lookupBtn.disabled = false;
+                lookupBtn.textContent = 'Find My Invitation';
+            }
+        });
 
+        // Allow Enter key to trigger lookup
+        guestNameInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                lookupBtn.click();
+            }
+        });
+
+        function displayGuestParty() {
+            const partyContainer = document.getElementById('guestParty');
+            partyContainer.innerHTML = '<h3 style="color: #fff; margin-bottom: 20px;">Your Invitation Includes:</h3>';
+            
+            guestParty.forEach((guest, index) => {
+                const guestDiv = document.createElement('div');
+                guestDiv.className = 'guest-card';
+                guestDiv.innerHTML = `
+                    <h3>${guest.name}</h3>
+                `;
+                partyContainer.appendChild(guestDiv);
+            });
+            
+            // Pre-fill email if available
+            if (guestParty[0].email) {
+                document.getElementById('email').value = guestParty[0].email;
+            }
+        }
+
+        function createMealSelections() {
+            const mealContainer = document.getElementById('mealSelections');
+            mealContainer.innerHTML = '';
+            
+            guestParty.forEach((guest, index) => {
+                const mealDiv = document.createElement('div');
+                mealDiv.className = 'form-group';
+                mealDiv.innerHTML = `
+                    <label>Meal Preference for ${guest.name} *</label>
+                    <div class="meal-options">
+                        <div class="meal-option">
+                            <input type="radio" id="meal-${index}-chicken" name="meal-${index}" value="chicken" required>
+                            <label for="meal-${index}-chicken">Herb-Roasted Chicken</label>
+                        </div>
+                        <div class="meal-option">
+                            <input type="radio" id="meal-${index}-fish" name="meal-${index}" value="fish" required>
+                            <label for="meal-${index}-fish">Pan-Seared Salmon</label>
+                        </div>
+                        <div class="meal-option">
+                            <input type="radio" id="meal-${index}-vegetarian" name="meal-${index}" value="vegetarian" required>
+                            <label for="meal-${index}-vegetarian">Vegetarian Risotto</label>
+                        </div>
+                    </div>
+                `;
+                mealContainer.appendChild(mealDiv);
+            });
+        }
+
+        // Show/hide meal selections based on attendance
+        attendingRadios.forEach(radio => {
+            radio.addEventListener('change', function() {
+                if (this.value === 'yes') {
+                    attendingDetails.classList.remove('hidden');
+                    createMealSelections();
+                } else {
+                    attendingDetails.classList.add('hidden');
+                    document.getElementById('mealSelections').innerHTML = '';
+                }
+            });
+        });
+
+        // Form submission
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const submitBtn = form.querySelector('.submit-btn');
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = 'Submitting... <span class="loading"></span>';
+
+            const attending = document.querySelector('input[name="attending"]:checked').value;
+            
+            // Collect meal preferences if attending
+            const guests = guestParty.map((guest, index) => {
+                const mealRadio = document.querySelector(`input[name="meal-${index}"]:checked`);
+                return {
+                    name: guest.name,
+                    meal: mealRadio ? mealRadio.value : 'N/A',
+                    dietary: document.getElementById('dietary').value
+                };
+            });
+
+            const formData = {
+                action: 'submit',
+                email: document.getElementById('email').value,
+                attending: attending,
+                guests: guests,
+                accommodation: document.getElementById('accommodation').value,
+                songRequest: document.getElementById('songRequest').value
+            };
+
+            try {
+                const response = await fetch(scriptURL, {
+                    method: 'POST',
+                    mode: 'cors',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formData)
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    rsvpForm.classList.add('hidden');
+                    successMessage.classList.remove('hidden');
+                } else {
+                    alert('Error: ' + data.message);
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Send RSVP';
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('There was an error submitting your RSVP. Please try again or contact us directly.');
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Send RSVP';
+            }
+        });
+    </script>
 </body>
 </html>
