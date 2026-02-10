@@ -1,0 +1,470 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.77">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px Arial; -webkit-text-stroke: #000000}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Arial; -webkit-text-stroke: #000000; min-height: 14.0px}
+    span.s1 {font-kerning: none}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">&lt;!DOCTYPE html&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">&lt;html lang="en"&gt;</span></p>
+<p class="p1"><span class="s1">&lt;head&gt;</span></p>
+<p class="p1"><span class="s1">&lt;meta charset="UTF-8"&gt;</span></p>
+<p class="p1"><span class="s1">&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</span></p>
+<p class="p1"><span class="s1">&lt;title&gt;Katie &amp; Justin - Wedding RSVP&lt;/title&gt;</span></p>
+<p class="p1"><span class="s1">&lt;style&gt;</span></p>
+<p class="p1"><span class="s1">* {</span></p>
+<p class="p1"><span class="s1">margin: 0;</span></p>
+<p class="p1"><span class="s1">padding: 0;</span></p>
+<p class="p1"><span class="s1">box-sizing: border-box;</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">```</span></p>
+<p class="p1"><span class="s1">body {</span></p>
+<p class="p1"><span class="s1">font-family: 'Georgia', serif;</span></p>
+<p class="p1"><span class="s1">background: #0a0a0a;</span></p>
+<p class="p1"><span class="s1">min-height: 100vh;</span></p>
+<p class="p1"><span class="s1">padding: 20px;</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">.container {</span></p>
+<p class="p1"><span class="s1">max-width: 600px;</span></p>
+<p class="p1"><span class="s1">margin: 0 auto;</span></p>
+<p class="p1"><span class="s1">background: #1a1a1a;</span></p>
+<p class="p1"><span class="s1">border-radius: 20px;</span></p>
+<p class="p1"><span class="s1">box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);</span></p>
+<p class="p1"><span class="s1">overflow: hidden;</span></p>
+<p class="p1"><span class="s1">border: 1px solid #2a2a2a;</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">.header {</span></p>
+<p class="p1"><span class="s1">background: #000;</span></p>
+<p class="p1"><span class="s1">padding: 0;</span></p>
+<p class="p1"><span class="s1">text-align: center;</span></p>
+<p class="p1"><span class="s1">position: relative;</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">.engagement-photo {</span></p>
+<p class="p1"><span class="s1">width: 100%;</span></p>
+<p class="p1"><span class="s1">height: 400px;</span></p>
+<p class="p1"><span class="s1">object-fit: cover;</span></p>
+<p class="p1"><span class="s1">display: block;</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">.header-text {</span></p>
+<p class="p1"><span class="s1">padding: 40px 40px 50px;</span></p>
+<p class="p1"><span class="s1">background: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, #1a1a1a 100%);</span></p>
+<p class="p1"><span class="s1">margin-top: -60px;</span></p>
+<p class="p1"><span class="s1">position: relative;</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">.header::before {</span></p>
+<p class="p1"><span class="s1">content: '♥';</span></p>
+<p class="p1"><span class="s1">position: absolute;</span></p>
+<p class="p1"><span class="s1">top: 20px;</span></p>
+<p class="p1"><span class="s1">left: 50%;</span></p>
+<p class="p1"><span class="s1">transform: translateX(-50%);</span></p>
+<p class="p1"><span class="s1">font-size: 30px;</span></p>
+<p class="p1"><span class="s1">color: rgba(255, 255, 255, 0.3);</span></p>
+<p class="p1"><span class="s1">z-index: 10;</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">.couple-names {</span></p>
+<p class="p1"><span class="s1">font-size: 48px;</span></p>
+<p class="p1"><span class="s1">color: #fff;</span></p>
+<p class="p1"><span class="s1">margin-bottom: 15px;</span></p>
+<p class="p1"><span class="s1">font-weight: 300;</span></p>
+<p class="p1"><span class="s1">letter-spacing: 3px;</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">.wedding-date {</span></p>
+<p class="p1"><span class="s1">font-size: 18px;</span></p>
+<p class="p1"><span class="s1">color: #999;</span></p>
+<p class="p1"><span class="s1">font-style: italic;</span></p>
+<p class="p1"><span class="s1">letter-spacing: 1px;</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">.content {</span></p>
+<p class="p1"><span class="s1">padding: 50px 40px;</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">.intro-text {</span></p>
+<p class="p1"><span class="s1">text-align: center;</span></p>
+<p class="p1"><span class="s1">font-size: 18px;</span></p>
+<p class="p1"><span class="s1">color: #999;</span></p>
+<p class="p1"><span class="s1">margin-bottom: 40px;</span></p>
+<p class="p1"><span class="s1">line-height: 1.6;</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">.form-group {</span></p>
+<p class="p1"><span class="s1">margin-bottom: 30px;</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">label {</span></p>
+<p class="p1"><span class="s1">display: block;</span></p>
+<p class="p1"><span class="s1">font-size: 16px;</span></p>
+<p class="p1"><span class="s1">color: #ccc;</span></p>
+<p class="p1"><span class="s1">margin-bottom: 10px;</span></p>
+<p class="p1"><span class="s1">font-weight: 500;</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">input[type="text"],</span></p>
+<p class="p1"><span class="s1">input[type="email"],</span></p>
+<p class="p1"><span class="s1">input[type="number"],</span></p>
+<p class="p1"><span class="s1">select,</span></p>
+<p class="p1"><span class="s1">textarea {</span></p>
+<p class="p1"><span class="s1">width: 100%;</span></p>
+<p class="p1"><span class="s1">padding: 14px 18px;</span></p>
+<p class="p1"><span class="s1">border: 2px solid #333;</span></p>
+<p class="p1"><span class="s1">border-radius: 10px;</span></p>
+<p class="p1"><span class="s1">font-size: 16px;</span></p>
+<p class="p1"><span class="s1">font-family: 'Georgia', serif;</span></p>
+<p class="p1"><span class="s1">transition: all 0.3s ease;</span></p>
+<p class="p1"><span class="s1">background: #0a0a0a;</span></p>
+<p class="p1"><span class="s1">color: #fff;</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">input:focus,</span></p>
+<p class="p1"><span class="s1">select:focus,</span></p>
+<p class="p1"><span class="s1">textarea:focus {</span></p>
+<p class="p1"><span class="s1">outline: none;</span></p>
+<p class="p1"><span class="s1">border-color: #666;</span></p>
+<p class="p1"><span class="s1">background: #000;</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">textarea {</span></p>
+<p class="p1"><span class="s1">resize: vertical;</span></p>
+<p class="p1"><span class="s1">min-height: 100px;</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">input::placeholder,</span></p>
+<p class="p1"><span class="s1">textarea::placeholder {</span></p>
+<p class="p1"><span class="s1">color: #555;</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">.radio-group {</span></p>
+<p class="p1"><span class="s1">display: flex;</span></p>
+<p class="p1"><span class="s1">gap: 30px;</span></p>
+<p class="p1"><span class="s1">margin-top: 12px;</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">.radio-option {</span></p>
+<p class="p1"><span class="s1">display: flex;</span></p>
+<p class="p1"><span class="s1">align-items: center;</span></p>
+<p class="p1"><span class="s1">cursor: pointer;</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">.radio-option input[type="radio"] {</span></p>
+<p class="p1"><span class="s1">width: 20px;</span></p>
+<p class="p1"><span class="s1">height: 20px;</span></p>
+<p class="p1"><span class="s1">margin-right: 10px;</span></p>
+<p class="p1"><span class="s1">cursor: pointer;</span></p>
+<p class="p1"><span class="s1">accent-color: #666;</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">.radio-option label {</span></p>
+<p class="p1"><span class="s1">margin: 0;</span></p>
+<p class="p1"><span class="s1">cursor: pointer;</span></p>
+<p class="p1"><span class="s1">font-weight: 400;</span></p>
+<p class="p1"><span class="s1">color: #ccc;</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">.meal-options {</span></p>
+<p class="p1"><span class="s1">display: grid;</span></p>
+<p class="p1"><span class="s1">gap: 12px;</span></p>
+<p class="p1"><span class="s1">margin-top: 12px;</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">.meal-option {</span></p>
+<p class="p1"><span class="s1">display: flex;</span></p>
+<p class="p1"><span class="s1">align-items: center;</span></p>
+<p class="p1"><span class="s1">padding: 12px;</span></p>
+<p class="p1"><span class="s1">border: 2px solid #333;</span></p>
+<p class="p1"><span class="s1">border-radius: 10px;</span></p>
+<p class="p1"><span class="s1">cursor: pointer;</span></p>
+<p class="p1"><span class="s1">transition: all 0.3s ease;</span></p>
+<p class="p1"><span class="s1">background: #0a0a0a;</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">.meal-option:hover {</span></p>
+<p class="p1"><span class="s1">border-color: #666;</span></p>
+<p class="p1"><span class="s1">background: #000;</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">.meal-option input[type="radio"] {</span></p>
+<p class="p1"><span class="s1">width: 18px;</span></p>
+<p class="p1"><span class="s1">height: 18px;</span></p>
+<p class="p1"><span class="s1">margin-right: 12px;</span></p>
+<p class="p1"><span class="s1">cursor: pointer;</span></p>
+<p class="p1"><span class="s1">accent-color: #666;</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">.meal-option label {</span></p>
+<p class="p1"><span class="s1">margin: 0;</span></p>
+<p class="p1"><span class="s1">cursor: pointer;</span></p>
+<p class="p1"><span class="s1">font-weight: 400;</span></p>
+<p class="p1"><span class="s1">flex: 1;</span></p>
+<p class="p1"><span class="s1">color: #ccc;</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">.submit-btn {</span></p>
+<p class="p1"><span class="s1">width: 100%;</span></p>
+<p class="p1"><span class="s1">padding: 18px;</span></p>
+<p class="p1"><span class="s1">background: #fff;</span></p>
+<p class="p1"><span class="s1">color: #000;</span></p>
+<p class="p1"><span class="s1">border: none;</span></p>
+<p class="p1"><span class="s1">border-radius: 12px;</span></p>
+<p class="p1"><span class="s1">font-size: 18px;</span></p>
+<p class="p1"><span class="s1">font-family: 'Georgia', serif;</span></p>
+<p class="p1"><span class="s1">cursor: pointer;</span></p>
+<p class="p1"><span class="s1">transition: all 0.3s ease;</span></p>
+<p class="p1"><span class="s1">letter-spacing: 1px;</span></p>
+<p class="p1"><span class="s1">margin-top: 20px;</span></p>
+<p class="p1"><span class="s1">box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);</span></p>
+<p class="p1"><span class="s1">font-weight: 500;</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">.submit-btn:hover {</span></p>
+<p class="p1"><span class="s1">transform: translateY(-2px);</span></p>
+<p class="p1"><span class="s1">box-shadow: 0 6px 20px rgba(255, 255, 255, 0.2);</span></p>
+<p class="p1"><span class="s1">background: #f0f0f0;</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">.submit-btn:active {</span></p>
+<p class="p1"><span class="s1">transform: translateY(0);</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">.hidden {</span></p>
+<p class="p1"><span class="s1">display: none;</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">.success-message {</span></p>
+<p class="p1"><span class="s1">text-align: center;</span></p>
+<p class="p1"><span class="s1">padding: 60px 40px;</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">.success-icon {</span></p>
+<p class="p1"><span class="s1">font-size: 60px;</span></p>
+<p class="p1"><span class="s1">margin-bottom: 20px;</span></p>
+<p class="p1"><span class="s1">color: #fff;</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">.success-message h2 {</span></p>
+<p class="p1"><span class="s1">color: #fff;</span></p>
+<p class="p1"><span class="s1">font-size: 32px;</span></p>
+<p class="p1"><span class="s1">margin-bottom: 15px;</span></p>
+<p class="p1"><span class="s1">font-weight: 400;</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">.success-message p {</span></p>
+<p class="p1"><span class="s1">color: #999;</span></p>
+<p class="p1"><span class="s1">font-size: 18px;</span></p>
+<p class="p1"><span class="s1">line-height: 1.6;</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">.guest-count-group {</span></p>
+<p class="p1"><span class="s1">margin-top: 12px;</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">@media (max-width: 600px) {</span></p>
+<p class="p1"><span class="s1">.couple-names {</span></p>
+<p class="p1"><span class="s1">font-size: 36px;</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">.content {</span></p>
+<p class="p1"><span class="s1">padding: 40px 25px;</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">.radio-group {</span></p>
+<p class="p1"><span class="s1">flex-direction: column;</span></p>
+<p class="p1"><span class="s1">gap: 15px;</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p1"><span class="s1">&lt;/style&gt;</span></p>
+<p class="p1"><span class="s1">```</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">&lt;/head&gt;</span></p>
+<p class="p1"><span class="s1">&lt;body&gt;</span></p>
+<p class="p1"><span class="s1">&lt;div class="container"&gt;</span></p>
+<p class="p1"><span class="s1">&lt;div class="header"&gt;</span></p>
+<p class="p1"><span class="s1">&lt;img src=""</span></p>
+<p class="p1"><span class="s1">alt="Katie and Justin Engagement Photo"</span></p>
+<p class="p1"><span class="s1">class="engagement-photo"&gt;</span></p>
+<p class="p1"><span class="s1">&lt;div class="header-text"&gt;</span></p>
+<p class="p1"><span class="s1">&lt;div class="couple-names"&gt;Katie &amp; Justin&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1">&lt;div class="wedding-date"&gt;August 30, 2026&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">```</span></p>
+<p class="p1"><span class="s1">&lt;div class="content"&gt;</span></p>
+<p class="p1"><span class="s1">&lt;div id="rsvpForm"&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p class="intro-text"&gt;</span></p>
+<p class="p1"><span class="s1">We would be honored to have you celebrate with us on our special day.</span></p>
+<p class="p1"><span class="s1">Please let us know if you'll be able to join us.</span></p>
+<p class="p1"><span class="s1">&lt;/p&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">&lt;form id="form"&gt;</span></p>
+<p class="p1"><span class="s1">&lt;div class="form-group"&gt;</span></p>
+<p class="p1"><span class="s1">&lt;label for="name"&gt;Your Name *&lt;/label&gt;</span></p>
+<p class="p1"><span class="s1">&lt;input type="text" id="name" name="name" required&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">&lt;div class="form-group"&gt;</span></p>
+<p class="p1"><span class="s1">&lt;label for="email"&gt;Email Address *&lt;/label&gt;</span></p>
+<p class="p1"><span class="s1">&lt;input type="email" id="email" name="email" required&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">&lt;div class="form-group"&gt;</span></p>
+<p class="p1"><span class="s1">&lt;label&gt;Will you be attending? *&lt;/label&gt;</span></p>
+<p class="p1"><span class="s1">&lt;div class="radio-group"&gt;</span></p>
+<p class="p1"><span class="s1">&lt;div class="radio-option"&gt;</span></p>
+<p class="p1"><span class="s1">&lt;input type="radio" id="attending-yes" name="attending" value="yes" required&gt;</span></p>
+<p class="p1"><span class="s1">&lt;label for="attending-yes"&gt;Joyfully accepts&lt;/label&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1">&lt;div class="radio-option"&gt;</span></p>
+<p class="p1"><span class="s1">&lt;input type="radio" id="attending-no" name="attending" value="no" required&gt;</span></p>
+<p class="p1"><span class="s1">&lt;label for="attending-no"&gt;Regretfully declines&lt;/label&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">&lt;div id="attendingDetails" class="hidden"&gt;</span></p>
+<p class="p1"><span class="s1">&lt;div class="form-group"&gt;</span></p>
+<p class="p1"><span class="s1">&lt;label for="guestCount"&gt;Number of Guests Attending *&lt;/label&gt;</span></p>
+<p class="p1"><span class="s1">&lt;input type="number" id="guestCount" name="guestCount" min="1" max="10" value="1"&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">&lt;div class="form-group"&gt;</span></p>
+<p class="p1"><span class="s1">&lt;label&gt;Meal Preference *&lt;/label&gt;</span></p>
+<p class="p1"><span class="s1">&lt;div class="meal-options"&gt;</span></p>
+<p class="p1"><span class="s1">&lt;div class="meal-option"&gt;</span></p>
+<p class="p1"><span class="s1">&lt;input type="radio" id="meal-chicken" name="meal" value="chicken" required&gt;</span></p>
+<p class="p1"><span class="s1">&lt;label for="meal-chicken"&gt;Herb-Roasted Chicken&lt;/label&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1">&lt;div class="meal-option"&gt;</span></p>
+<p class="p1"><span class="s1">&lt;input type="radio" id="meal-fish" name="meal" value="fish" required&gt;</span></p>
+<p class="p1"><span class="s1">&lt;label for="meal-fish"&gt;Pan-Seared Salmon&lt;/label&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1">&lt;div class="meal-option"&gt;</span></p>
+<p class="p1"><span class="s1">&lt;input type="radio" id="meal-vegetarian" name="meal" value="vegetarian" required&gt;</span></p>
+<p class="p1"><span class="s1">&lt;label for="meal-vegetarian"&gt;Vegetarian Risotto&lt;/label&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">&lt;div class="form-group"&gt;</span></p>
+<p class="p1"><span class="s1">&lt;label for="dietary"&gt;Dietary Restrictions or Allergies&lt;/label&gt;</span></p>
+<p class="p1"><span class="s1">&lt;textarea id="dietary" name="dietary" placeholder="Please let us know of any dietary restrictions or food allergies..."&gt;&lt;/textarea&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">&lt;div class="form-group"&gt;</span></p>
+<p class="p1"><span class="s1">&lt;label for="accommodation"&gt;Where will you be staying?&lt;/label&gt;</span></p>
+<p class="p1"><span class="s1">&lt;input type="text" id="accommodation" name="accommodation" placeholder="Hotel name or location"&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">&lt;div class="form-group"&gt;</span></p>
+<p class="p1"><span class="s1">&lt;label for="songRequest"&gt;Do you have a song request for the band?&lt;/label&gt;</span></p>
+<p class="p1"><span class="s1">&lt;input type="text" id="songRequest" name="songRequest" placeholder="Song title and artist"&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">&lt;button type="submit" class="submit-btn"&gt;Send RSVP&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/form&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">&lt;div id="successMessage" class="success-message hidden"&gt;</span></p>
+<p class="p1"><span class="s1">&lt;div class="success-icon"&gt;✓&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1">&lt;h2&gt;Thank You!&lt;/h2&gt;</span></p>
+<p class="p1"><span class="s1">&lt;p&gt;Your RSVP has been received. We're so excited to celebrate with you!&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">&lt;script&gt;</span></p>
+<p class="p1"><span class="s1">const form = document.getElementById('form');</span></p>
+<p class="p1"><span class="s1">const attendingRadios = document.querySelectorAll('input[name="attending"]');</span></p>
+<p class="p1"><span class="s1">const attendingDetails = document.getElementById('attendingDetails');</span></p>
+<p class="p1"><span class="s1">const rsvpForm = document.getElementById('rsvpForm');</span></p>
+<p class="p1"><span class="s1">const successMessage = document.getElementById('successMessage');</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">// Show/hide additional fields based on attendance</span></p>
+<p class="p1"><span class="s1">attendingRadios.forEach(radio =&gt; {</span></p>
+<p class="p1"><span class="s1">radio.addEventListener('change', function() {</span></p>
+<p class="p1"><span class="s1">if (this.value === 'yes') {</span></p>
+<p class="p1"><span class="s1">attendingDetails.classList.remove('hidden');</span></p>
+<p class="p1"><span class="s1">document.getElementById('guestCount').required = true;</span></p>
+<p class="p1"><span class="s1">document.querySelectorAll('input[name="meal"]').forEach(input =&gt; {</span></p>
+<p class="p1"><span class="s1">input.required = true;</span></p>
+<p class="p1"><span class="s1">});</span></p>
+<p class="p1"><span class="s1">} else {</span></p>
+<p class="p1"><span class="s1">attendingDetails.classList.add('hidden');</span></p>
+<p class="p1"><span class="s1">document.getElementById('guestCount').required = false;</span></p>
+<p class="p1"><span class="s1">document.querySelectorAll('input[name="meal"]').forEach(input =&gt; {</span></p>
+<p class="p1"><span class="s1">input.required = false;</span></p>
+<p class="p1"><span class="s1">});</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p1"><span class="s1">});</span></p>
+<p class="p1"><span class="s1">});</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">// Handle form submission</span></p>
+<p class="p1"><span class="s1">form.addEventListener('submit', function(e) {</span></p>
+<p class="p1"><span class="s1">e.preventDefault();</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">// Disable submit button to prevent double submissions</span></p>
+<p class="p1"><span class="s1">const submitBtn = form.querySelector('.submit-btn');</span></p>
+<p class="p1"><span class="s1">const originalText = submitBtn.textContent;</span></p>
+<p class="p1"><span class="s1">submitBtn.disabled = true;</span></p>
+<p class="p1"><span class="s1">submitBtn.textContent = 'Submitting...';</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">// Collect form data</span></p>
+<p class="p1"><span class="s1">const formData = {</span></p>
+<p class="p1"><span class="s1">name: document.getElementById('name').value,</span></p>
+<p class="p1"><span class="s1">email: document.getElementById('email').value,</span></p>
+<p class="p1"><span class="s1">attending: document.querySelector('input[name="attending"]:checked').value,</span></p>
+<p class="p1"><span class="s1">guestCount: document.getElementById('guestCount').value,</span></p>
+<p class="p1"><span class="s1">meal: document.querySelector('input[name="meal"]:checked')?.value || 'N/A',</span></p>
+<p class="p1"><span class="s1">dietary: document.getElementById('dietary').value,</span></p>
+<p class="p1"><span class="s1">accommodation: document.getElementById('accommodation').value,</span></p>
+<p class="p1"><span class="s1">songRequest: document.getElementById('songRequest').value</span></p>
+<p class="p1"><span class="s1">};</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">// IMPORTANT: Replace 'YOUR_SCRIPT_URL_HERE' with your actual Google Apps Script web app URL</span></p>
+<p class="p1"><span class="s1">const scriptURL = 'YOUR_SCRIPT_URL_HERE';</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">// Send data to Google Sheets</span></p>
+<p class="p1"><span class="s1">fetch(scriptURL, {</span></p>
+<p class="p1"><span class="s1">method: 'POST',</span></p>
+<p class="p1"><span class="s1">mode: 'no-cors',</span></p>
+<p class="p1"><span class="s1">headers: {</span></p>
+<p class="p1"><span class="s1">'Content-Type': 'application/json',</span></p>
+<p class="p1"><span class="s1">},</span></p>
+<p class="p1"><span class="s1">body: JSON.stringify(formData)</span></p>
+<p class="p1"><span class="s1">})</span></p>
+<p class="p1"><span class="s1">.then(response =&gt; {</span></p>
+<p class="p1"><span class="s1">// Show success message</span></p>
+<p class="p1"><span class="s1">rsvpForm.classList.add('hidden');</span></p>
+<p class="p1"><span class="s1">successMessage.classList.remove('hidden');</span></p>
+<p class="p1"><span class="s1">})</span></p>
+<p class="p1"><span class="s1">.catch(error =&gt; {</span></p>
+<p class="p1"><span class="s1">console.error('Error:', error);</span></p>
+<p class="p1"><span class="s1">alert('There was an error submitting your RSVP. Please try again or contact us directly.');</span></p>
+<p class="p1"><span class="s1">submitBtn.disabled = false;</span></p>
+<p class="p1"><span class="s1">submitBtn.textContent = originalText;</span></p>
+<p class="p1"><span class="s1">});</span></p>
+<p class="p1"><span class="s1">});</span></p>
+<p class="p1"><span class="s1">&lt;/script&gt;</span></p>
+<p class="p1"><span class="s1">```</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">&lt;/body&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/html&gt;</span></p>
+</body>
+</html>
