@@ -45,7 +45,6 @@
         .header-text {
             padding: 40px 40px 50px;
             background: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, #1a1a1a 100%);
-            margin-top: -35px;
             position: relative;
         }
 
@@ -131,31 +130,42 @@
             color: #555;
         }
 
-        .radio-group {
-            display: flex;
-            gap: 30px;
-            margin-top: 12px;
+        .checkbox-group {
+            margin-top: 15px;
         }
 
-        .radio-option {
+        .checkbox-item {
             display: flex;
             align-items: center;
+            padding: 15px;
+            border: 2px solid #333;
+            border-radius: 10px;
+            margin-bottom: 12px;
             cursor: pointer;
+            transition: all 0.3s ease;
+            background: #0a0a0a;
         }
 
-        .radio-option input[type="radio"] {
-            width: 20px;
-            height: 20px;
-            margin-right: 10px;
+        .checkbox-item:hover {
+            border-color: #666;
+            background: #000;
+        }
+
+        .checkbox-item input[type="checkbox"] {
+            width: 22px;
+            height: 22px;
+            margin-right: 15px;
             cursor: pointer;
             accent-color: #666;
         }
 
-        .radio-option label {
+        .checkbox-item label {
             margin: 0;
             cursor: pointer;
             font-weight: 400;
+            flex: 1;
             color: #ccc;
+            font-size: 18px;
         }
 
         .meal-options {
@@ -321,20 +331,15 @@
             .content {
                 padding: 40px 25px;
             }
-
-            .radio-group {
-                flex-direction: column;
-                gap: 15px;
-            }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <img src="images/engagement.png"
-                 alt="Katie and Justin Engagement Photo" 
-                 class="engagement-photo">
+            <!-- Add your engagement photo here if desired -->
+            <img src="images/engagement.png" alt="Katie and Justin" class="engagement-photo"> -->
+            
             <div class="header-text">
                 <div class="couple-names">Katie & Justin</div>
                 <div class="wedding-date">August 30, 2026</div>
@@ -366,25 +371,6 @@
                 <form id="form">
                     <div id="guestParty"></div>
 
-                    <div class="form-group">
-                        <label for="email">Email Address *</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Will you be attending? *</label>
-                        <div class="radio-group">
-                            <div class="radio-option">
-                                <input type="radio" id="attending-yes" name="attending" value="yes" required>
-                                <label for="attending-yes">Joyfully accepts</label>
-                            </div>
-                            <div class="radio-option">
-                                <input type="radio" id="attending-no" name="attending" value="no" required>
-                                <label for="attending-no">Regretfully declines</label>
-                            </div>
-                        </div>
-                    </div>
-
                     <div id="attendingDetails" class="hidden">
                         <div id="mealSelections"></div>
 
@@ -392,16 +378,16 @@
                             <label for="dietary">Dietary Restrictions or Allergies</label>
                             <textarea id="dietary" name="dietary" placeholder="Please let us know of any dietary restrictions or food allergies for your party..."></textarea>
                         </div>
-                    </div>
 
-                    <div class="form-group">
-                        <label for="accommodation">Where will you be staying?</label>
-                        <input type="text" id="accommodation" name="accommodation" placeholder="Hotel name or location">
-                    </div>
+                        <div class="form-group">
+                            <label for="accommodation">Where will you be staying?</label>
+                            <input type="text" id="accommodation" name="accommodation" placeholder="Hotel name or location">
+                        </div>
 
-                    <div class="form-group">
-                        <label for="songRequest">Do you have a song request for the band?</label>
-                        <input type="text" id="songRequest" name="songRequest" placeholder="Song title and artist">
+                        <div class="form-group">
+                            <label for="songRequest">Do you have a song request for the band?</label>
+                            <input type="text" id="songRequest" name="songRequest" placeholder="Song title and artist">
+                        </div>
                     </div>
 
                     <button type="submit" class="submit-btn">Send RSVP</button>
@@ -424,7 +410,6 @@
         const guestNameInput = document.getElementById('guestName');
         const lookupError = document.getElementById('lookupError');
         const form = document.getElementById('form');
-        const attendingRadios = document.querySelectorAll('input[name="attending"]');
         const attendingDetails = document.getElementById('attendingDetails');
         
         let guestParty = [];
@@ -489,20 +474,34 @@
 
         function displayGuestParty() {
             const partyContainer = document.getElementById('guestParty');
-            partyContainer.innerHTML = '<h3 style="color: #fff; margin-bottom: 20px;">Your Invitation Includes:</h3>';
+            partyContainer.innerHTML = '<div class="form-group"><label>Please check all guests who will be attending:</label><div class="checkbox-group" id="attendanceCheckboxes"></div></div>';
+            
+            const checkboxContainer = document.getElementById('attendanceCheckboxes');
             
             guestParty.forEach((guest, index) => {
-                const guestDiv = document.createElement('div');
-                guestDiv.className = 'guest-card';
-                guestDiv.innerHTML = `
-                    <h3>${guest.name}</h3>
+                const checkboxDiv = document.createElement('div');
+                checkboxDiv.className = 'checkbox-item';
+                checkboxDiv.innerHTML = `
+                    <input type="checkbox" id="attending-${index}" data-guest-index="${index}" class="attendance-checkbox">
+                    <label for="attending-${index}">${guest.name}</label>
                 `;
-                partyContainer.appendChild(guestDiv);
+                checkboxContainer.appendChild(checkboxDiv);
+                
+                // Add event listener to checkbox
+                const checkbox = checkboxDiv.querySelector('input[type="checkbox"]');
+                checkbox.addEventListener('change', updateAttendingGuests);
             });
+        }
+
+        function updateAttendingGuests() {
+            const checkedBoxes = document.querySelectorAll('.attendance-checkbox:checked');
             
-            // Pre-fill email if available
-            if (guestParty[0].email) {
-                document.getElementById('email').value = guestParty[0].email;
+            if (checkedBoxes.length > 0) {
+                attendingDetails.classList.remove('hidden');
+                createMealSelections();
+            } else {
+                attendingDetails.classList.add('hidden');
+                document.getElementById('mealSelections').innerHTML = '';
             }
         }
 
@@ -510,7 +509,12 @@
             const mealContainer = document.getElementById('mealSelections');
             mealContainer.innerHTML = '';
             
-            guestParty.forEach((guest, index) => {
+            const checkedBoxes = document.querySelectorAll('.attendance-checkbox:checked');
+            
+            checkedBoxes.forEach((checkbox) => {
+                const index = checkbox.dataset.guestIndex;
+                const guest = guestParty[index];
+                
                 const mealDiv = document.createElement('div');
                 mealDiv.className = 'form-group';
                 mealDiv.innerHTML = `
@@ -534,19 +538,6 @@
             });
         }
 
-        // Show/hide meal selections based on attendance
-        attendingRadios.forEach(radio => {
-            radio.addEventListener('change', function() {
-                if (this.value === 'yes') {
-                    attendingDetails.classList.remove('hidden');
-                    createMealSelections();
-                } else {
-                    attendingDetails.classList.add('hidden');
-                    document.getElementById('mealSelections').innerHTML = '';
-                }
-            });
-        });
-
         // Form submission
         form.addEventListener('submit', async function(e) {
             e.preventDefault();
@@ -555,25 +546,32 @@
             submitBtn.disabled = true;
             submitBtn.innerHTML = 'Submitting... <span class="loading"></span>';
 
-            const attending = document.querySelector('input[name="attending"]:checked').value;
+            const checkedBoxes = document.querySelectorAll('.attendance-checkbox:checked');
             
-            // Collect meal preferences if attending
+            // Build guest response data
             const guests = guestParty.map((guest, index) => {
-                const mealRadio = document.querySelector(`input[name="meal-${index}"]:checked`);
+                const checkbox = document.getElementById(`attending-${index}`);
+                const isAttending = checkbox.checked;
+                
+                let meal = 'Not Attending';
+                if (isAttending) {
+                    const mealRadio = document.querySelector(`input[name="meal-${index}"]:checked`);
+                    meal = mealRadio ? mealRadio.value : 'N/A';
+                }
+                
                 return {
                     name: guest.name,
-                    meal: mealRadio ? mealRadio.value : 'N/A',
-                    dietary: document.getElementById('dietary').value
+                    attending: isAttending ? 'yes' : 'no',
+                    meal: meal,
+                    dietary: isAttending ? document.getElementById('dietary').value : '',
+                    accommodation: isAttending ? document.getElementById('accommodation').value : '',
+                    songRequest: isAttending ? document.getElementById('songRequest').value : ''
                 };
             });
 
             const formData = {
                 action: 'submit',
-                email: document.getElementById('email').value,
-                attending: attending,
-                guests: guests,
-                accommodation: document.getElementById('accommodation').value,
-                songRequest: document.getElementById('songRequest').value
+                guests: guests
             };
 
             try {
