@@ -375,11 +375,6 @@
                         <div id="mealSelections"></div>
 
                         <div class="form-group">
-                            <label for="dietary">Dietary Restrictions or Allergies</label>
-                            <textarea id="dietary" name="dietary" placeholder="Please let us know of any dietary restrictions or food allergies for your party..."></textarea>
-                        </div>
-
-                        <div class="form-group">
                             <label for="accommodation">Where will you be staying?</label>
                             <input type="text" id="accommodation" name="accommodation" placeholder="Hotel name or location">
                         </div>
@@ -415,7 +410,7 @@
         let guestParty = [];
         
         // IMPORTANT: Replace with your Google Apps Script URL
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbwR6fjUrbRMK5FYZW_kCpNJ0PMIbuzheg2ZCB6Wzl3GnhwY-06XIk43hEm6qYZV5wTw4Q/exec';
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbyBqR7ZXiqhz3enRwfWqn16M1qWGpbUSj3p3na-MAxSpGM5fG3edUZkcF7POFpCqY6Zfw/exec';
 
         // Guest lookup
         lookupBtn.addEventListener('click', async function() {
@@ -512,22 +507,29 @@
                 const guest = guestParty[index];
                 
                 const mealDiv = document.createElement('div');
-                mealDiv.className = 'form-group';
+                mealDiv.className = 'guest-card';
                 mealDiv.innerHTML = `
-                    <label>Meal Preference for ${guest.name} *</label>
-                    <div class="meal-options">
-                        <div class="meal-option">
-                            <input type="radio" id="meal-${index}-chicken" name="meal-${index}" value="chicken" required>
-                            <label for="meal-${index}-chicken">Herb-Roasted Chicken</label>
+                    <h3>${guest.name}</h3>
+                    <div class="form-group">
+                        <label>Meal Preference *</label>
+                        <div class="meal-options">
+                            <div class="meal-option">
+                                <input type="radio" id="meal-${index}-chicken" name="meal-${index}" value="chicken" required>
+                                <label for="meal-${index}-chicken">Herb-Roasted Chicken</label>
+                            </div>
+                            <div class="meal-option">
+                                <input type="radio" id="meal-${index}-fish" name="meal-${index}" value="fish" required>
+                                <label for="meal-${index}-fish">Pan-Seared Salmon</label>
+                            </div>
+                            <div class="meal-option">
+                                <input type="radio" id="meal-${index}-vegetarian" name="meal-${index}" value="vegetarian" required>
+                                <label for="meal-${index}-vegetarian">Vegetarian Risotto</label>
+                            </div>
                         </div>
-                        <div class="meal-option">
-                            <input type="radio" id="meal-${index}-fish" name="meal-${index}" value="fish" required>
-                            <label for="meal-${index}-fish">Pan-Seared Salmon</label>
-                        </div>
-                        <div class="meal-option">
-                            <input type="radio" id="meal-${index}-vegetarian" name="meal-${index}" value="vegetarian" required>
-                            <label for="meal-${index}-vegetarian">Vegetarian Risotto</label>
-                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="dietary-${index}">Dietary Restrictions or Allergies</label>
+                        <textarea id="dietary-${index}" name="dietary-${index}" placeholder="Any dietary restrictions or allergies..."></textarea>
                     </div>
                 `;
                 mealContainer.appendChild(mealDiv);
@@ -550,16 +552,21 @@
                 const isAttending = checkbox.checked;
                 
                 let meal = 'Not Attending';
+                let dietary = '';
+                
                 if (isAttending) {
                     const mealRadio = document.querySelector(`input[name="meal-${index}"]:checked`);
                     meal = mealRadio ? mealRadio.value : 'N/A';
+                    
+                    const dietaryField = document.getElementById(`dietary-${index}`);
+                    dietary = dietaryField ? dietaryField.value : '';
                 }
                 
                 return {
                     name: guest.name,
                     attending: isAttending ? 'yes' : 'no',
                     meal: meal,
-                    dietary: isAttending ? document.getElementById('dietary').value : '',
+                    dietary: dietary,
                     accommodation: isAttending ? document.getElementById('accommodation').value : '',
                     songRequest: isAttending ? document.getElementById('songRequest').value : ''
                 };
