@@ -70,18 +70,35 @@
 
         .content {
             padding: 50px 40px;
+            position: relative;
             min-height: 80vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
         }
 
         #lookupSection {
+            position: relative;
+        }
+
+        #lookupSection .intro-text {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
             margin-bottom: 40px;
         }
 
         #lookupSection .form-group {
+            position: absolute;
+            bottom: 100px;
+            left: 0;
+            right: 0;
             margin-bottom: 10px;
+        }
+
+        #lookupSection .lookup-btn {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
         }
 
         #rsvpForm {
@@ -93,7 +110,7 @@
             text-align: center;
             font-size: 18px;
             color: #8b7355;
-            margin-bottom: 20px;
+            margin-bottom: 40px;
             line-height: 1.6;
         }
 
