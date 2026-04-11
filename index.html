@@ -25,15 +25,15 @@
         .container {
             max-width: 600px;
             margin: 0 auto;
-            background: rgba(245, 237, 220, 0.75);
+            background: rgba(245, 237, 220, 0.3);
             border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
             overflow: hidden;
-            border: 1px solid rgba(210, 195, 170, 0.3);
+            border: 1px solid rgba(210, 195, 170, 0.2);
         }
 
         .header {
-            background: rgba(245, 235, 224, 0.6);
+            background: rgba(245, 235, 224, 0.3);
             padding: 0;
             text-align: center;
             position: relative;
@@ -49,19 +49,8 @@
 
         .header-text {
             padding: 40px 40px 50px;
-            background: rgba(245, 235, 224, 0.6);
+            background: rgba(245, 235, 224, 0.3);
             position: relative;
-        }
-
-        .header::before {
-            content: '♥';
-            position: absolute;
-            top: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 30px;
-            color: rgba(139, 115, 85, 0.3);
-            z-index: 10;
         }
 
         .couple-names {
@@ -473,7 +462,6 @@
                     We would be honored to have you celebrate with us on our special day. 
                     Please enter your name to begin your RSVP.
                 </p>
-                <div class="step-indicator">Step 1 of 2: Find Your Invitation</div>
 
                 <div class="form-group">
                     <label for="guestName">Your Name *</label>
@@ -487,8 +475,6 @@
             </div>
 
             <div id="rsvpForm" class="hidden">
-                <div class="step-indicator">Step 2 of 2: Complete Your RSVP</div>
-                
                 <form id="form">
                     <div id="guestParty"></div>
 
