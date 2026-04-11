@@ -15,8 +15,8 @@
             font-family: 'Georgia', serif;
             background-image: url('dunes.png');
             background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
+            background-position: center center;
+            background-attachment: scroll;
             background-repeat: no-repeat;
             min-height: 100vh;
             padding: 20px;
@@ -323,12 +323,134 @@
         }
 
         @media (max-width: 600px) {
+            body {
+                padding: 10px;
+                background-size: cover;
+                background-position: center center;
+            }
+
+            .container {
+                border-radius: 15px;
+            }
+
             .couple-names {
-                font-size: 36px;
+                font-size: 32px;
+                letter-spacing: 2px;
+            }
+
+            .wedding-date {
+                font-size: 16px;
             }
 
             .content {
-                padding: 40px 25px;
+                padding: 30px 20px;
+            }
+
+            .header-text {
+                padding: 30px 20px 40px;
+            }
+
+            .engagement-photo {
+                height: 250px;
+                object-position: center;
+            }
+
+            .form-group {
+                margin-bottom: 25px;
+            }
+
+            label {
+                font-size: 15px;
+            }
+
+            input[type="text"],
+            input[type="email"],
+            textarea {
+                font-size: 16px;
+                padding: 12px 15px;
+            }
+
+            .checkbox-item {
+                padding: 12px;
+            }
+
+            .checkbox-item label {
+                font-size: 16px;
+            }
+
+            .meal-option {
+                padding: 10px;
+            }
+
+            .guest-card {
+                padding: 15px;
+            }
+
+            .guest-card h3 {
+                font-size: 18px;
+            }
+
+            .submit-btn, .lookup-btn {
+                padding: 15px;
+                font-size: 17px;
+            }
+
+            .intro-text {
+                font-size: 16px;
+                margin-bottom: 30px;
+            }
+
+            .step-indicator {
+                font-size: 13px;
+                margin-bottom: 25px;
+            }
+
+            .success-message {
+                padding: 40px 20px;
+            }
+
+            .success-message h2 {
+                font-size: 28px;
+            }
+
+            .success-message p {
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            body {
+                padding: 5px;
+            }
+
+            .couple-names {
+                font-size: 28px;
+                letter-spacing: 1px;
+            }
+
+            .wedding-date {
+                font-size: 14px;
+            }
+
+            .content {
+                padding: 25px 15px;
+            }
+
+            .header-text {
+                padding: 25px 15px 35px;
+            }
+
+            .engagement-photo {
+                height: 200px;
+            }
+
+            .intro-text {
+                font-size: 15px;
+            }
+
+            .checkbox-item label,
+            .meal-option label {
+                font-size: 15px;
             }
         }
     </style>
@@ -337,7 +459,7 @@
     <div class="container">
         <div class="header">
             <!-- Add your engagement photo here if desired -->
-            <img src="images/engagement.png" alt="Katie and Justin" class="engagement-photo">
+            <img src="images/engagement.png" alt="Katie and Justin" class="engagement-photo"> -->
             
             <div class="header-text">
                 <div class="couple-names">Katie & Justin</div>
