@@ -5,6 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Katie & Justin - Wedding RSVP</title>
     <style>
+        @font-face {
+            font-family: 'Lovtony';
+            src: url('Lovtony.ttf') format('truetype'),
+                 url('Lovtony.otf') format('opentype'),
+                 url('Lovtony.woff') format('woff'),
+                 url('Lovtony.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
         * {
             margin: 0;
             padding: 0;
@@ -12,7 +24,7 @@
         }
 
         body {
-            font-family: 'Georgia', serif;
+            font-family: 'Cormorant SC', serif;
             background-image: url('dunes.png');
             background-size: cover;
             background-position: center center;
@@ -54,18 +66,24 @@
         }
 
         .couple-names {
-            font-size: 48px;
+            font-size: 56px;
             color: #5a4a3a;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             font-weight: 300;
-            letter-spacing: 3px;
+            letter-spacing: 6px;
+            font-family: 'Cormorant SC', serif;
+            font-style: normal;
+            text-transform: lowercase;
         }
 
         .wedding-date {
             font-size: 18px;
             color: #8b7355;
-            font-style: italic;
-            letter-spacing: 1px;
+            font-style: normal;
+            letter-spacing: 3px;
+            font-family: 'Cormorant SC', serif;
+            text-transform: uppercase;
+            font-weight: 300;
         }
 
         .content {
@@ -105,10 +123,17 @@
             border: 2px solid #d2c3aa;
             border-radius: 10px;
             font-size: 16px;
-            font-family: 'Georgia', serif;
+            font-family: 'Cormorant SC', serif;
             transition: all 0.3s ease;
             background: rgba(255, 255, 255, 0.7);
-            color: #5a4a3a;
+            color: #8b7355;
+            text-align: center;
+        }
+
+        input::placeholder,
+        textarea::placeholder {
+            color: #8b7355;
+            opacity: 1;
         }
 
         input:focus,
@@ -121,11 +146,6 @@
         textarea {
             resize: vertical;
             min-height: 100px;
-        }
-
-        input::placeholder,
-        textarea::placeholder {
-            color: #555;
         }
 
         .checkbox-group {
@@ -212,7 +232,7 @@
             border: none;
             border-radius: 12px;
             font-size: 18px;
-            font-family: 'Georgia', serif;
+            font-family: 'Cormorant SC', serif;
             cursor: pointer;
             transition: all 0.3s ease;
             letter-spacing: 1px;
@@ -309,13 +329,6 @@
             margin-top: 20px;
         }
 
-        .step-indicator {
-            text-align: center;
-            color: #666;
-            font-size: 14px;
-            margin-bottom: 30px;
-        }
-
         @media (max-width: 600px) {
             body {
                 padding: 10px;
@@ -328,8 +341,8 @@
             }
 
             .couple-names {
-                font-size: 32px;
-                letter-spacing: 2px;
+                font-size: 44px;
+                letter-spacing: 3px;
             }
 
             .wedding-date {
@@ -394,11 +407,6 @@
                 margin-bottom: 30px;
             }
 
-            .step-indicator {
-                font-size: 13px;
-                margin-bottom: 25px;
-            }
-
             .success-message {
                 padding: 40px 20px;
             }
@@ -418,8 +426,8 @@
             }
 
             .couple-names {
-                font-size: 28px;
-                letter-spacing: 1px;
+                font-size: 36px;
+                letter-spacing: 2px;
             }
 
             .wedding-date {
