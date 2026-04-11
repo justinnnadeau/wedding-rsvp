@@ -616,7 +616,7 @@
                 mealDiv.innerHTML = `
                     <h3>${guest.name}</h3>
                     <div class="form-group">
-                        <label>Meal Preference *</label>
+                        <label>Meal Preference</label>
                         <div class="meal-options">
                             <div class="meal-option">
                                 <input type="radio" id="meal-${index}-Petit Filet Mignon & Butter Braised Local Lobster" name="meal-${index}" value="Petit Filet Mignon & Butter Braised Local Lobster" required>
@@ -693,6 +693,7 @@
                 if (data.success) {
                     rsvpForm.classList.add('hidden');
                     successMessage.classList.remove('hidden');
+                    document.querySelector('.header').classList.add('hidden');
                 } else {
                     alert('Error: ' + data.message);
                     submitBtn.disabled = false;
