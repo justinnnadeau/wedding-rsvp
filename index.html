@@ -490,6 +490,16 @@
                             <label for="songRequest">Do you have a song request for the band?</label>
                             <input type="text" id="songRequest" name="songRequest" placeholder="Song title and artist">
                         </div>
+
+                        <div class="form-group">
+                            <label for="mondayFunday">Will you be attending Monday Funday?</label>
+                            <div class="checkbox-group">
+                                <div class="checkbox-item">
+                                    <input type="checkbox" id="mondayFunday" name="mondayFunday" value="Yes">
+                                    <label for="On Monday, we will be keep the celebration going at the Bank Street Beach with sun sand and bbq. Will you be attending Monday Funday?">Yes, I'll be there!</label>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     <button type="submit" class="submit-btn">Send RSVP</button>
@@ -498,7 +508,7 @@
 
             <div id="successMessage" class="success-message hidden">
                 <h2>Thank You!</h2>
-                <p>Your RSVP has been received. We're so excited to celebrate with you!<br><br>Keep the celebration going with us on Monday! Join us at the Bank Street Beach for some SUN, SAND, and BBQ.</p>
+                <p>Your RSVP has been received. We're so excited to celebrate with you!</p>
             </div>
         </div>
     </div>
@@ -674,7 +684,8 @@
                     meal: meal,
                     dietary: dietary,
                     accommodation: isAttending ? document.getElementById('accommodation').value : '',
-                    songRequest: isAttending ? document.getElementById('songRequest').value : ''
+                    songRequest: isAttending ? document.getElementById('songRequest').value : '',
+                    mondayFunday: isAttending ? (document.getElementById('mondayFunday').checked ? 'Yes' : 'No') : ''
                 };
             });
 
