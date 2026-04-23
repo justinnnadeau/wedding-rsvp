@@ -493,11 +493,15 @@
 
                         <div class="form-group">
                             <p style="color: #8b7355; margin-bottom: 15px; line-height: 1.6;">On Monday, we will be keeping the celebration going at the Bank Street Beach with sun, sand, and BBQ.</p>
-                            <label for="mondayFunday">Will you be attending Monday Funday?</label>
-                            <div class="checkbox-group">
-                                <div class="checkbox-item">
-                                    <input type="checkbox" id="mondayFunday" name="mondayFunday" value="Yes">
-                                    <label for="mondayFunday">Yes, I'll be there!</label>
+                            <label>Will you be attending Monday Funday?</label>
+                            <div class="meal-options">
+                                <div class="meal-option">
+                                    <input type="radio" id="mondayFundayYes" name="mondayFunday" value="Yes">
+                                    <label for="mondayFundayYes">Yes</label>
+                                </div>
+                                <div class="meal-option">
+                                    <input type="radio" id="mondayFundayNo" name="mondayFunday" value="No">
+                                    <label for="mondayFundayNo">No</label>
                                 </div>
                             </div>
                         </div>
@@ -527,7 +531,7 @@
         let guestParty = [];
         
         // IMPORTANT: Replace with your Google Apps Script URL
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbzpU1hVsWZOSYfXSSL4Z5t1cj7PDZm-qNfPjMRD3Hi7urbLBL70N3xVrcAPUGlD_tSh/exec';
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbyBqR7ZXiqhz3enRwfWqn16M1qWGpbUSj3p3na-MAxSpGM5fG3edUZkcF7POFpCqY6Zfw/exec';
 
         // Guest lookup
         lookupBtn.addEventListener('click', async function() {
@@ -636,7 +640,7 @@
                             </div>
                             <div class="meal-option">
                                 <input type="radio" id="meal-${index}-Pan Roasted Cod" name="meal-${index}" value="Pan Roasted Cod" required>
-                                <label for="meal-${index}-Pan Roasted Cod"><b>Pan Roasted Cod</b><br>Bacon Corn Chowder, Wilted Kale, Littleneck Clams, Sour Dough Croutons, Smoked Paprika Oil</label>
+                                <label for="meal-${index}-Pan Roasted Cod"><b>Pan Roasted Cod Bacon</b><br>Corn Chowder, Wilted Kale, Littleneck Clams, Sour Dough Croutons, Smoked Paprika Oil</label>
                             </div>
                             <div class="meal-option">
                                 <input type="radio" id="meal-${index}-Summer Vegetable Tart" name="meal-${index}" value="Summer Vegetable Tart" required>
@@ -686,7 +690,7 @@
                     dietary: dietary,
                     accommodation: isAttending ? document.getElementById('accommodation').value : '',
                     songRequest: isAttending ? document.getElementById('songRequest').value : '',
-                    mondayFunday: isAttending ? (document.getElementById('mondayFunday').checked ? 'Yes' : 'No') : ''
+                    mondayFunday: isAttending ? (document.querySelector('input[name="mondayFunday"]:checked')?.value || '') : ''
                 };
             });
 
