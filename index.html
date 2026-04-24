@@ -591,24 +591,35 @@
             const checkboxContainer = document.getElementById('attendanceCheckboxes');
             
             guestParty.forEach((guest, index) => {
-                const checkboxDiv = document.createElement('div');
-                checkboxDiv.className = 'checkbox-item';
-                checkboxDiv.innerHTML = `
-                    <input type="checkbox" id="attending-${index}" data-guest-index="${index}" class="attendance-checkbox">
-                    <label for="attending-${index}">${guest.name}</label>
+                const guestDiv = document.createElement('div');
+                guestDiv.className = 'guest-card';
+                guestDiv.innerHTML = `
+                    <h3>${guest.name}</h3>
+                    <div class="meal-options">
+                        <div class="meal-option">
+                            <input type="radio" id="attending-yes-${index}" name="attending-${index}" value="yes" data-guest-index="${index}" class="attendance-radio">
+                            <label for="attending-yes-${index}">Joyfully Accepts</label>
+                        </div>
+                        <div class="meal-option">
+                            <input type="radio" id="attending-no-${index}" name="attending-${index}" value="no" data-guest-index="${index}" class="attendance-radio">
+                            <label for="attending-no-${index}">Regretfully Declines</label>
+                        </div>
+                    </div>
                 `;
-                checkboxContainer.appendChild(checkboxDiv);
+                checkboxContainer.appendChild(guestDiv);
                 
-                // Add event listener to checkbox
-                const checkbox = checkboxDiv.querySelector('input[type="checkbox"]');
-                checkbox.addEventListener('change', updateAttendingGuests);
+                // Add event listeners to radio buttons
+                const yesRadio = guestDiv.querySelector(`#attending-yes-${index}`);
+                const noRadio = guestDiv.querySelector(`#attending-no-${index}`);
+                yesRadio.addEventListener('change', updateAttendingGuests);
+                noRadio.addEventListener('change', updateAttendingGuests);
             });
         }
 
         function updateAttendingGuests() {
-            const checkedBoxes = document.querySelectorAll('.attendance-checkbox:checked');
+            const yesRadios = document.querySelectorAll('.attendance-radio[value="yes"]:checked');
             
-            if (checkedBoxes.length > 0) {
+            if (yesRadios.length > 0) {
                 attendingDetails.classList.remove('hidden');
                 createMealSelections();
             } else {
@@ -621,10 +632,10 @@
             const mealContainer = document.getElementById('mealSelections');
             mealContainer.innerHTML = '';
             
-            const checkedBoxes = document.querySelectorAll('.attendance-checkbox:checked');
+            const yesRadios = document.querySelectorAll('.attendance-radio[value="yes"]:checked');
             
-            checkedBoxes.forEach((checkbox) => {
-                const index = checkbox.dataset.guestIndex;
+            yesRadios.forEach((radio) => {
+                const index = radio.dataset.guestIndex;
                 const guest = guestParty[index];
                 
                 const mealDiv = document.createElement('div');
@@ -665,12 +676,13 @@
             submitBtn.disabled = true;
             submitBtn.innerHTML = 'Submitting... <span class="loading"></span>';
 
-            const checkedBoxes = document.querySelectorAll('.attendance-checkbox:checked');
+            const yesRadios = document.querySelectorAll('.attendance-radio[value="yes"]:checked');
+            const anyAttending = yesRadios.length > 0;
             
             // Build guest response data
             const guests = guestParty.map((guest, index) => {
-                const checkbox = document.getElementById(`attending-${index}`);
-                const isAttending = checkbox.checked;
+                const yesRadio = document.getElementById(`attending-yes-${index}`);
+                const isAttending = yesRadio && yesRadio.checked;
                 
                 let meal = 'Not Attending';
                 let dietary = '';
@@ -711,6 +723,15 @@
                     rsvpForm.classList.add('hidden');
                     successMessage.classList.remove('hidden');
                     document.querySelector('.header').classList.add('hidden');
+                    
+                    // Update success message based on attendance
+                    if (anyAttending) {
+                        successMessage.querySelector('h2').textContent = 'Thank You!';
+                        successMessage.querySelector('p').textContent = "Your RSVP has been received. We're so excited to celebrate with you!";
+                    } else {
+                        successMessage.querySelector('h2').textContent = 'Thank You!';
+                        successMessage.querySelector('p').textContent = "Your RSVP has been received. We are sorry you won't be able to celebrate with us, but we appreciate you letting us know.";
+                    }
                 } else {
                     alert('Error: ' + data.message);
                     submitBtn.disabled = false;
